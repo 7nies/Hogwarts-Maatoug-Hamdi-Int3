@@ -6,10 +6,10 @@ from utils.input_utils import ask_choice
 
 
 def display_main_menu():
-    """
+    """""
     This function displays the main menu and gets the player's choice.
     :return: str
-    """
+    """""
     choice = ask_choice("Do you want to start your adventure?   ",
                ["Yes", "No, exit the game"])
     return choice
@@ -86,3 +86,5 @@ def launch_menu_choice():
         print("The magical world will be waiting when you're ready...")
         print()
         exit()
+
+launch_menu_choice()

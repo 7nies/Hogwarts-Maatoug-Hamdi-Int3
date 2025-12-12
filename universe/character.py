@@ -37,9 +37,5 @@ def modify_money(character, amount)
     return character
 
 def add_item(character, key, item):
-    if key == "Inventory" or key == "Spells":
         character[key].append(item)
-    else:
-        print("Error: key must be 'Inventory' or 'Spells'.")
-
     return character

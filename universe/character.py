@@ -37,5 +37,5 @@ def modify_money(character, amount)
     return character
 
 def add_item(character, key, item):
-        character[key].append(item)
+    character[key].append(item)
     return character

@@ -1,11 +1,9 @@
 import json
 
-
-
 def ask_text(message):
     while True:
         user_input = input(message).strip()
-        if user_input:
+        if not user_input:
             return user_input
         print("Invalid input. Please enter some text.")
 
@@ -14,21 +12,18 @@ def ask_number(message, min_val=None, max_val=None):
     valid = False
     while not valid:
         user_input = input(message).strip()
-
-        if not user_input:      # est-ce vide ?
+        if not user_input:      # vide ?
             print("Invalid input. Please enter a number.")
-        else:                   # on vérifie si c'est négatif
+        else:                   # on vérifie si c négatif
             start_index = 0
             neg = False
             if user_input[0] == '-':
                 neg = True
                 start_index = 1
-
             all_int = True      # on regarde si tous les ...[i] sont des nombres
             for i in range(start_index, len(user_input)):
                 if user_input[i] < '0' or user_input[i] > '9':
                     all_int = False
-
             if not all_int or start_index == len(user_input):
                 print("Invalid input. Please enter a number.")
             else:
@@ -36,13 +31,9 @@ def ask_number(message, min_val=None, max_val=None):
                 for i in range(start_index, len(user_input)):
                     digit = ord(user_input[i]) - ord('0')
                     value = value * 10 + digit      # on décale de 1 puis on ajoute le nombre suivant
-
                 if neg:
                     value = -value
-
-                if min_val is not None and value < min_val:     # vérifie la rangée
-                    print(f"Please enter a number between {min_val} and {max_val}.")
-                elif max_val is not None and value > max_val:
+                if min_val is not None and value < min_val or value > max_val:     # vérifie la rangée
                     print(f"Please enter a number between {min_val} and {max_val}.")
                 else:
                     valid = True

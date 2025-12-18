@@ -33,8 +33,8 @@ def display_character(character):
             print(value)
 
 def modify_money(character, amount)
-    character["Money"] = character["Money"] + amount
-    return character
+    character["Money"] += amount
+    print(f"{character['Money']}")
 
 def add_item(character, key, item):
     character[key].append(item)

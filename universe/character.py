@@ -32,7 +32,7 @@ def display_character(character):
         else:
             print(value)
 
-def modify_money(character, amount)
+def modify_money(character, amount):
     character["Money"] += amount
     print(f"{character['Money']}")
 

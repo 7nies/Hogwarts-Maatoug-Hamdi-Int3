@@ -1,10 +1,10 @@
+# NE PAS OUBLIER D'IMPORT CE DONT ON A BESOIN
 from utils.input_utils import ask_number
-
 
 def update_house_points(houses, house_name, points):
     if house_name in houses:
         houses[house_name] += points
-        print(f"{points} for {house_name} ! Adding it up to {points} points.")
+        print(f"+{points} points for {house_name}! Total: {houses[house_name]} points.")
     else:
         print("House not found.")
     return houses
@@ -39,8 +39,8 @@ def assign_house(character, questions):
         print(question_text)
         for i in range(len(choices)):
             print(f"{i+1}. {choices[i]}")
-        choice_num = ask_number("Your choice: ", 0, len(choices))
-        chosen_house = houses[choice_num]
+        choice_num = ask_number("Your choice: ", 1, len(choices))
+        chosen_house = houses[choice_num-1]
         house_scores[chosen_house] += 3
     print("\nSummary of scores:")
     for house, score in house_scores.items():

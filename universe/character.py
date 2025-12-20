@@ -18,29 +18,29 @@ def init_character(last_name, first_name, attributes):
 
 def display_character(character):
     """
-    This function displays the character profile updated.
+    This function displays the updated character profile.
     :param character: dict
-    :return: dict
     """
     print("Character profile:")
     for key in character:
-        value = character[key]
+        val = character[key]
         print(f"{key}: ", end="")
-        if type(value) is dict:     # pr attributes
+
+        if type(val) is dict:
             print()
-            for subkey in value:
-                print(f"- {subkey}: {value[subkey]}")
-        elif type(value) is list:
-            if len(value) == 0:
+            for subkey in val:
+                print(f"- {subkey}: {val[subkey]}")
+
+        elif type(val) is list:
+            if len(val) == 0:
                 print()
             else:
                 text_list = []
-                for item in value:
+                for item in val:
                     text_list.append(str(item))
                 print(", ".join(text_list))
-
         else:
-            print(value)
+            print(val)
 
 def modify_money(character, amount):
     """

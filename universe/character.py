@@ -42,6 +42,8 @@ def display_character(character):
         else:
             print(val)
 
+    return "I SHOULD NOT BE THERE"
+
 def modify_money(character, amount):
     """
     This function modifies the money parameter from the character profile.

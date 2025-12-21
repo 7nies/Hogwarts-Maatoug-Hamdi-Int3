@@ -1,4 +1,4 @@
-from json import load
+import json
 
 def ask_text(message):
     """
@@ -68,10 +68,11 @@ def ask_choice(message, options):
 
 def load_file(file_path):
     """
-
+    This function loads a json file and returns it.
+    :rtype: Any
     :param file_path: string
     :return: any
     """
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding="utf-8") as f:
         data = json.load(f)
     return data

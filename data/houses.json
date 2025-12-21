@@ -6,8 +6,8 @@
     "colors": ["red", "gold"],
     "traits": ["courage", "bravery", "loyalty"],
     "bonus_attributs": {
-      "courage": 2,
-      "loyalty": 1
+      "Courage": 2,
+      "Loyalty": 1
     }
   },
   "Slytherin": {
@@ -17,8 +17,8 @@
     "colors": ["green", "silver"],
     "traits": ["cunning", "ambition", "determination"],
     "bonus_attributs": {
-      "ambition": 2,
-      "intelligence": 1
+      "Ambition": 2,
+      "Intelligence": 1
     }
   },
   "Hufflepuff": {
@@ -28,8 +28,8 @@
     "colors": ["yellow", "black"],
     "traits": ["hard work", "patience", "loyalty"],
     "bonus_attributs": {
-      "loyalty": 2,
-      "courage": 1
+      "Loyalty": 2,
+      "Courage": 1
     }
   },
   "Ravenclaw": {
@@ -39,8 +39,8 @@
     "colors": ["blue", "bronze"],
     "traits": ["intelligence", "creativity", "curiosity"],
     "bonus_attributs": {
-      "intelligence": 2,
-      "ambition": 1
+      "Intelligence": 2,
+      "Ambition": 1
     }
   }
 }

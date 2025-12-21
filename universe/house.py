@@ -1,4 +1,3 @@
-# NE PAS OUBLIER D'IMPORT CE DONT ON A BESOIN
 from utils.input_utils import ask_number
 
 def update_house_points(houses, house_name, points):

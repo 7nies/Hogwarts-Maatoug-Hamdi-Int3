@@ -109,7 +109,6 @@ def magic_quiz(character, file_path):
     :param file_path: str
     :return: int
     """
-    print()
     print("=" * 80)
     print("                       Professor Snape's surprise test")
     print("=" * 80)
@@ -182,10 +181,10 @@ def magic_quiz(character, file_path):
         print("Professor Snape looks almost... impressed.")
         print('"Perfect score. Remarkable."')
     elif score >= 50:
-        print("Professor Snape nods curtly.")
+        print("Professor Snape nods.")
         print('"Passable."')
     else:
-        print("Professor Snape sneers.")
+        print("Professor Snape looks away.")
         print('"Disappointing. I expected nothing less."')
 
     print()

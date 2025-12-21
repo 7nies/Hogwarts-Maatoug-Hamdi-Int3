@@ -448,7 +448,6 @@ def buy_supplies(character):
     print()
 
     # Transition
-    print()
     print('"Perfect!" the witch says. "Now, every Hogwarts student needs')
     print('a loyal companion."')
     print()
@@ -514,7 +513,6 @@ def buy_supplies(character):
     print("final inventory:")
     print()
 
-    print()
     print("=" * 80)
     print("                                 Your Profile")
     print("." * 80)

@@ -20,6 +20,7 @@ def display_character(character):
     """
     This function displays the updated character profile.
     :param character: dict
+    :return: dict
     """
     print("Character profile:")
     for key in character:
@@ -42,24 +43,24 @@ def display_character(character):
         else:
             print(val)
 
-    return "I SHOULD NOT BE THERE"
+    return character
 
 def modify_money(character, amount):
     """
     This function modifies the money parameter from the character profile.
     :param character: dict
     :param amount: int
-    :return: none
+    :return: None
     """
     character["Money"] += amount
 
 def add_item(character, key, item):
     """
-    This function adds an item to either the inventory or spell parameters the character profile.
+    This function adds an item to either the inventory or spell parameter of the character profile.
     :param character:
     :param key:
     :param item:
-    :return:
+    :return: None
     """
     character[key].append(item)
     return character

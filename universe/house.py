@@ -1,6 +1,13 @@
 from utils.input_utils import ask_number
 
 def update_house_points(houses, house_name, points):
+    """
+    This function updates the house points.
+    :param houses: dict
+    :param house_name: str
+    :param points: int
+    :return: dict
+    """
     if house_name in houses:
         houses[house_name] += points
         print(f"+{points} points for {house_name}! Total: {houses[house_name]} points.")
@@ -9,6 +16,11 @@ def update_house_points(houses, house_name, points):
     return houses
 
 def display_winning_house(houses):
+    """
+    This function displays the winning house.
+    :param houses: dict
+    :return: None
+    """
     max_point = 0
     winning_house = []
     for house in houses:
@@ -24,6 +36,12 @@ def display_winning_house(houses):
 
 
 def assign_house(character, questions):
+    """
+    This function assigns a house to the player after asking questions that modify the output.
+    :param character: dict
+    :param questions: list
+    :return: str
+    """
     house_scores = {
         "Gryffindor": 0,
         "Slytherin": 0,

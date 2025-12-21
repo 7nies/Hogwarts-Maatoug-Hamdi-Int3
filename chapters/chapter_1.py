@@ -3,51 +3,8 @@ from utils.input_utils import *
 
 def introduction():
     """
-    This function displays the introduction for chapter 1, including the ascii art.
+    This function displays the introduction for chapter 1.
     """
-    hogwarts_ascii = """
-
-                                  #.                                                                 
-                                .# #.                                                                
-                               ##   #                     #        #+   ##                           
-                              ##     #                     +.    ###    +                ##          
-                             #+       #                   ### +####                                  
-          #                 ##         #                  ### #+#######                              
-         ###  #           .#            #                   ##########.           ++     #           
-         # #. ##         ##              #                  #######               #. +##     +       
-        #-  ## .#       ##                #               +##   ###               ## ## .   +##.     
-       ##        #     ####              ###                     ##   #         .    +###            
-       #          #       #-   -#   ##   ##                       #  +###       ###. #   #-          
-      ##   #       #      ##   -#   ##   ##                            #             ###             
-     -#    #     ####     ###            ##                                          + ##            
-     #          ###   .  #####           ##  #+  #-                                     ##           
-    ####+        ###########             .##########                          ####       ##          
-        ##                                                                     ###        ##         
-        ###      ###   ###                                    #.++  ##                    .##        
-        ###      ###   ###          -####+            +####   #####+###                     ##       
-        #        ###   ###   .##   ##- ##+  ##     ##     #+  ##    ##    ##                ###      
-        #        ###   ####### ##- ##  ##+  ##  #  ##  .+ ##  ##    ##  ##  #                ###     
-        #      # ###  -### +##  ## ##  +#+  ##  #  ## ### ##  ##    ##   ###                  ###    
-        #        ####  ### -##  ## ## .##+  ## ##  #   ##+##  ##    ##    -##                  #     
-        #        ###   ###  ##  ##   # +#+   ##  ##    .  .         ##  +####                        
-       +#        ###.  ###    +        ##+                          ##    #                          
-       ##        ###+  ###          #  ##                                                            
-       ##             +###         ## #                                                              
-       ##                           #                                                                
-       ##                                                                                            
-     +                                                                                               
-
-
-"""
-
-    print(hogwarts_ascii)
-    input("Press Enter to continue...")
-    print()
-    print("=" * 80)
-    print("                    Chapter I: Fall into the magical world")
-    print("=" * 80)
-    print()
-
     print("For years, you've lived in the cupboard under the stairs at 4 Privet Drive,")
     print("with your Aunt Petunia, Uncle Vernon, and their spoiled son Dudley.")
     print()
@@ -164,7 +121,7 @@ def create_character():
     print()
     print('"I can see who you truly are.')
     print('Answer honestly, for I will measure the four qualities')
-    print('that define every witch and wizard:')
+    print('that define every witch and wizard at Hogwarts:')
     print('courage, intelligence, loyalty and ambition."')
     print()
     print("You must answer with a number between 1 and 10.")
@@ -574,25 +531,36 @@ def start_chapter_1():
     This function regroups the entirety of the function that form chapter 1, as well as a small conclusion.
     :return:
     """
+    print("~"*80)
+    print("=" * 80)
+    print("                    Chapter I: Fall into the magical world")
+    print("=" * 80)
+    print("~"*80)
+    print()
+
     introduction()
     char = create_character()
     receive_letter(char)
     meet_hagrid()
     buy_supplies(char)
+
     print("=" * 80)
     print()
-    print("End of Chapter I!")
+    print("End of Chapter II!")
     print()
-    print("You've discovered the secret realm,")
-    print("received your letter, met Hagrid")
-    print("and purchased your supplies.")
-    print("Your journey to Hogwarts awaits!")
+    print("On your way to Hogwarts, you\'ve met unforgettable friends,")
+    print("faced your first choices, and discovered the personalities")
+    print("that will shape your journey.")
     print()
-    print("On September 1st, you'll board the Hogwarts Express")
-    print("and begin your mystical education.")
+    print("The Sorting Hat has placed you in your house,")
+    print("and the castle's halls await your footsteps.")
     print()
-    print("But don't mistake yourself!")
-    print("Your fall into the magical world has only just begun...")
+    print("But remember, this is only the beginning...")
+    print("Classes, challenges, and magical adventures lie ahead.")
+    print()
+    print("Take a deep breath, steady your courage,")
+    print("and prepare for your dive into Hogwarts! ")
+
     print()
     input("Press Enter to continue...")
     print()

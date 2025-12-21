@@ -2,8 +2,6 @@ from universe import character
 from universe.character import display_character
 from utils.input_utils import ask_choice, load_file
 from universe.house import assign_house
-from chapters.chapter_1 import start_chapter_1
-
 
 
 def meet_friends(character):
@@ -13,7 +11,6 @@ def meet_friends(character):
         :param character: dict
         :return: None
         """
-    print()
     print("=" * 80)
     print("                            THE HOGWARTS EXPRESS")
     print("=" * 80)
@@ -54,7 +51,7 @@ def meet_friends(character):
     input("Press Enter to continue...")
     print()
 
-    # Player meets Ron
+    # Player meets Rpon
     print("The compartment door slides open.")
     print()
     print("A red-haired boy with a smudge of dirt on his nose pokes his head in.")
@@ -106,7 +103,7 @@ def meet_friends(character):
     choice_hermione = ask_choice('How do you respond?',
                                  ['"Yes, I love learning new things!"', '"Uh… no, I prefer adventures over books."'])
 
-    if choice_hermione == 'Yes, I love learning new things!':
+    if choice_hermione == '"Yes, I love learning new things!"':
         print()
         print("Hermione beams.")
         print('"Really? That\'s wonderful! So few people appreciate')
@@ -128,7 +125,7 @@ def meet_friends(character):
         print("She glances at your confident posture.")
         print('"You seem like the type who learns by doing. That takes courage."')
         print()
-        print("She leaves to continue searching for the toad.")
+        print("She leaves to continue searching for intellectual friends.")
         character["Attributes"]["Courage"] += 1
 
     print()
@@ -205,7 +202,7 @@ def meet_friends(character):
 
 def welcome_message():
     """
-    Displays Professor Dumbledore's welcome speech to the students
+    This function displays Professor Dumbledore's welcome speech to the students.
     """
     print()
     print("=" * 80)
@@ -218,7 +215,7 @@ def welcome_message():
     print("You step onto the platform, and there's Hagrid, towering above the crowd.")
     print('"Firs\' years! Firs\' years over here!" he calls, waving a lantern.')
     print()
-    print("You follow him down a steep, narrow path through the darkness.")
+    print("You follow him down a narrow path through the darkness.")
     print()
     input("Press Enter to continue...")
     print()
@@ -242,7 +239,7 @@ def welcome_message():
     print()
 
     print("=" * 80)
-    print("                    THE GREAT HALL")
+    print("                            THE GREAT HALL")
     print("=" * 80)
     print()
 
@@ -292,14 +289,12 @@ def welcome_message():
     print()
 
     print("He sits back down.")
-    print()
     print("You're not sure if he's joking or completely mad.")
-    print()
     print("Around you, the older students are applauding and laughing.")
     print()
     print("Another teacher with a tall pointed hat and stern expression,")
-    print("Professor McGonagall, steps forward carrying an ancient,")
-    print("patched wizard's hat.")
+    print("Professor McGonagall, steps forward")
+    print("carrying an ancient, patched wizard's hat.")
     print()
     print("The Sorting Hat.")
     print()
@@ -316,7 +311,7 @@ def sorting_ceremony(character):
     """
     print()
     print("=" * 80)
-    print("                    THE SORTING CEREMONY")
+    print("                            The Sorting Ceremony")
     print("=" * 80)
     print()
 
@@ -356,13 +351,11 @@ def sorting_ceremony(character):
     print()
 
     print("Your legs feel like jelly as you walk to the front of the hall.")
-    print()
     print("Every eye is on you. The silence is deafening.")
     print()
-    print("You sit on the stool, and Professor McGonagall lowers the Sorting Hat")
-    print("onto your head.")
-    print()
-    print("It's too large and falls over your eyes...")
+    print("You sit on the stool, and Professor McGonagall")
+    print("lowers the Sorting Hat onto your head.")
+    print("It's too large and falls over your eyes, plunging you into darkness...")
     print()
     input("Press Enter to continue...")
     print()
@@ -414,7 +407,7 @@ def sorting_ceremony(character):
 
     print("The Hat takes a deep breath and shouts for all to hear:")
     print()
-    print(f"'{assigned_house}!!!'")
+    print(f'"{assigned_house}!!!"')
     print()
     print("-" * 80)
     print()
@@ -472,7 +465,7 @@ def enter_common_room(character):
     """
     print()
     print("=" * 80)
-    print("                                YOUR NEW HOME")
+    print("                                Your new home")
     print("=" * 80)
     print()
 
@@ -534,6 +527,7 @@ def enter_common_room(character):
     print()
     print(house_info["installation_message"])
     print(f"The colors your house features are {', '.join(house_info['colors'])}.")
+    print()
     print(f"     {house_info["emoji"]} " + "=" * 36 + f" {house_info['emoji']}")
 
     print()
@@ -553,22 +547,42 @@ def enter_common_room(character):
     print()
 
 def start_chapter_2(char):
+    print("~"*80)
+    print("=" * 80)
+    print("                Chapter II: Friends, Foes, and the Sorting Hat")
+    print("=" * 80)
+    print("~"*80)
+    print()
+
     meet_friends(char)
     welcome_message()
     sorting_ceremony(char)
     enter_common_room(char)
+
+    print()
+    print("=" * 80)
+    print("                                 Your Profile")
+    print("." * 80)
     display_character(char)
     print("=" * 80)
-    print()
-    print("End of Chapter II!")
-    print()
-    print("On you way to Hogwarts, you've met unforgettable friends.")
-    print("You then dived into the huge castle and got assigned")
-    print("to the best house you could've ever gotten into.")
-    print()
-    print("Yet, nothing has started yet...")
-    print("Keep calm, you'll begin classes soon!")
+
     print()
     input("Press Enter to continue...")
     print()
+
+    print("=" * 80)
+    print()
+
+    print("End of Chapter II!")
+    print()
+    print("On you way to Hogwarts, you met unforgettable friends.")
+    print("You explored the vast, bustling castle and were assigned")
+    print("to the house that suits you best, a place where your journey truly begins.")
+    print()
+    print("Take a deep breath ; your magical classes await!")
+
+    print()
+    input("Press Enter to continue...")
+    print()
+
     return(char)

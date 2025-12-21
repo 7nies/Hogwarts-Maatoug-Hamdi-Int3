@@ -19,7 +19,6 @@ def launch_menu_choice():
     :return:
     """
     hogwarts_ascii = """
-
                                       #.                                                                 
                                     .# #.                                                                
                                    ##   #                     #        #+   ##                           
@@ -50,7 +49,6 @@ def launch_menu_choice():
            ##                                                                                            
          +                                                                                               
 
-
     """
     print(hogwarts_ascii)
     choice = display_main_menu()
@@ -68,6 +66,7 @@ def launch_menu_choice():
             "Ravenclaw": 0
         }
 
+
         char = start_chapter_1()
         char = start_chapter_2(char)
         start_chapter_3(char, houses)
@@ -75,8 +74,8 @@ def launch_menu_choice():
         # Texte de fin
         print()
         print("=" * 80)
-        print("              Thank you for playing! :3")
-        print("                     This game has been made by Ines Maatoug and Anas Hamdi ^_^")
+        print("                           Thank you for playing! :3")
+        print("          This game has been made by Ines Maatoug and Anas Hamdi ^_^")
         print("=" * 80)
         print()
 

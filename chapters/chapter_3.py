@@ -10,7 +10,6 @@ def learn_spells(character, file_path):
     :param file_path: str
     """
 
-    print()
     print("=" * 80)
     print("                              First magic lessons")
     print("=" * 80)
@@ -206,7 +205,6 @@ def start_chapter_3(character, houses):
     :param character: dict
     :param houses: dict
     """
-    print()
     print("~" * 80)
     print("=" * 80)
     print("                    Chapter III: Wand, words, and wonders")

@@ -546,20 +546,7 @@ def start_chapter_1():
 
     print("=" * 80)
     print()
-    print("End of Chapter II!")
-    print()
-    print("On your way to Hogwarts, you\'ve met unforgettable friends,")
-    print("faced your first choices, and discovered the personalities")
-    print("that will shape your journey.")
-    print()
-    print("The Sorting Hat has placed you in your house,")
-    print("and the castle's halls await your footsteps.")
-    print()
-    print("But remember, this is only the beginning...")
-    print("Classes, challenges, and magical adventures lie ahead.")
-    print()
-    print("Take a deep breath, steady your courage,")
-    print("and prepare for your dive into Hogwarts! ")
+
 
     print()
     input("Press Enter to continue...")

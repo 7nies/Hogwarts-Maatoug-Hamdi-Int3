@@ -204,9 +204,8 @@ def welcome_message():
     """
     This function displays Professor Dumbledore's welcome speech to the students.
     """
-    print()
     print("=" * 80)
-    print("                            ARRIVAL AT HOGWARTS")
+    print("                            Arrival at Hogwarts")
     print("=" * 80)
     print()
 
@@ -239,7 +238,7 @@ def welcome_message():
     print()
 
     print("=" * 80)
-    print("                            THE GREAT HALL")
+    print("                              The Great Hall")
     print("=" * 80)
     print()
 
@@ -251,7 +250,7 @@ def welcome_message():
     print("The tables are laid with glittering golden plates and goblets.")
     print()
     print("At the top of the hall is another long table where the teachers sit,")
-    print("and above it all, the ceiling shows the night sky—")
+    print("and above it all, the ceiling shows the night sky,")
     print("stars twinkling, clouds drifting past.")
     print()
     print('"It\'s bewitched to look like the sky outside," you hear Hermione whisper.')
@@ -309,7 +308,6 @@ def sorting_ceremony(character):
     """
     This function conducts the Sorting Hat ceremony to assign the player to a house.
     """
-    print()
     print("=" * 80)
     print("                            The Sorting Ceremony")
     print("=" * 80)
@@ -331,6 +329,7 @@ def sorting_ceremony(character):
     print()
     print('Or loyal Hufflepuff,')
     print('Where they are just and true!"')
+    print()
     print("-" * 80)
     print()
     input("Press Enter to continue...")
@@ -463,7 +462,6 @@ def enter_common_room(character):
     """
     In this function, the player enters their house common room and receives a welcome speech.
     """
-    print()
     print("=" * 80)
     print("                                Your new home")
     print("=" * 80)
@@ -481,7 +479,6 @@ def enter_common_room(character):
     house_info = houses_data[player_house]
 
     print(f"Finally, you arrive at the {player_house} common room entrance.")
-    print()
 
     # House-specific entrance descriptions
     if player_house == "Gryffindor":
@@ -559,7 +556,6 @@ def start_chapter_2(char):
     sorting_ceremony(char)
     enter_common_room(char)
 
-    print()
     print("=" * 80)
     print("                                 Your Profile")
     print("." * 80)
@@ -575,7 +571,7 @@ def start_chapter_2(char):
 
     print("End of Chapter II!")
     print()
-    print("On you way to Hogwarts, you met unforgettable friends.")
+    print("On you way to Hogwarts, you\'ve met unforgettable friends.")
     print("You explored the vast, bustling castle and were assigned")
     print("to the house that suits you best, a place where your journey truly begins.")
     print()

@@ -59,6 +59,7 @@ def assign_house(character, questions):
         choice_num = ask_number("Your choice: ", 1, len(choices))
         chosen_house = houses[choice_num-1]
         house_scores[chosen_house] += 3
+        print()
     print("\nSummary of scores:")
     for house, score in house_scores.items():
         print(f"{house}: {score} points")

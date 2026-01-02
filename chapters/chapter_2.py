@@ -1,4 +1,3 @@
-from universe import character
 from universe.character import display_character
 from utils.input_utils import ask_choice, load_file
 from universe.house import assign_house
@@ -14,18 +13,6 @@ def meet_friends(character):
     print("=" * 80)
     print("                            THE HOGWARTS EXPRESS")
     print("=" * 80)
-    print()
-
-    print("Hagrid drops you off at King's Cross Station with a warm pat on the shoulder.")
-    print()
-    print('"Platform 9¾ is between platforms 9 and 10," he reminds you.')
-    print('"Just walk straight at the barrier. Don\'t stop, don\'t be scared.')
-    print('Best do it at a bit of a run if you are the nervous kind!", he laughs.')
-    print()
-    print("You take a deep breath, grip your trolley, and run straight at the solid barrier.")
-    print("You brace for impact, but instead...")
-    print()
-    input("Press Enter to continue...")
     print()
 
     print("You emerge onto a bustling platform filled with students and families.")
@@ -51,7 +38,6 @@ def meet_friends(character):
     input("Press Enter to continue...")
     print()
 
-    # Player meets Rpon
     print("The compartment door slides open.")
     print()
     print("A red-haired boy with a smudge of dirt on his nose pokes his head in.")
@@ -78,7 +64,7 @@ def meet_friends(character):
 
     else:
         print()
-        print("Ron's smile falters.")
+        print("Ron's smile fades out.")
         print('"Oh. Right. Yeah, I get it."')
         print("He backs out awkwardly and closes the door.")
         print()
@@ -177,7 +163,6 @@ def meet_friends(character):
         print("Draco's eyes narrow dangerously.")
         print('"Oh, you\'re going to regret that," he hisses.')
         print('"Mark my words. You just made an enemy."')
-        print()
         print("He storms out, his bodyguards trailing behind.")
         print()
         print("Standing up to bullies takes guts. You don't regret it.")
@@ -189,11 +174,9 @@ def meet_friends(character):
 
     print("The train continues its journey northward.")
     print("Through the window, you watch the countryside blur past.")
-    print()
     print("Somewhere ahead lies Hogwarts Castle, and your future.")
     print()
     print("The choices you've made already say a lot about who you are.")
-    print()
     print(f"Your updated attributes: {character["Attributes"]}")
     print()
     input("Press Enter to continue...")
@@ -227,11 +210,6 @@ def welcome_message():
     print("Its windows sparkle in the starry sky, towers reaching toward the heavens.")
     print("It's the most magnificent thing you've ever seen.")
     print()
-    print('"No more \'an four to a boat!" Hagrid calls out.')
-    print()
-    print("You climb into a small boat, and it glides across the glassy water by itself.")
-    print("Then up a flight of stone steps until you reach the castle's entrance.")
-    print()
     print("The massive oak doors swing open.")
     print()
     input("Press Enter to continue...")
@@ -246,8 +224,6 @@ def welcome_message():
     print()
     print("Thousands of candles float in midair above four long tables")
     print("where the rest of the students sit.")
-    print()
-    print("The tables are laid with glittering golden plates and goblets.")
     print()
     print("At the top of the hall is another long table where the teachers sit,")
     print("and above it all, the ceiling shows the night sky,")
@@ -265,8 +241,6 @@ def welcome_message():
     print("rises from the center of the High Table.")
     print()
     print("The hall falls silent.")
-    print()
-    print("His eyes twinkle with warmth as he surveys the students.")
     print()
     input("Press Enter to continue...")
     print()
@@ -309,33 +283,14 @@ def sorting_ceremony(character):
     This function conducts the Sorting Hat ceremony to assign the player to a house.
     """
     print("=" * 80)
-    print("                            The Sorting Ceremony")
+    print("                             The Sorting Ceremony")
     print("=" * 80)
     print()
 
-    print("Suddenly, a rip near the brim opens like a mouth, and the Hat begins to sing:")
+    print("Suddenly, a rip near the brim opens like a mouth, as the Hat says:")
     print()
     print('"Put me on and I will tell you')
     print('Where you ought to be.')
-    print()
-    print('You might belong in Gryffindor,')
-    print('Where dwell the brave at heart,')
-    print()
-    print('Or yet in wise old Ravenclaw,')
-    print('If you\'ve a ready mind,')
-    print()
-    print('Or perhaps in Slytherin')
-    print('You\'ll make your real friends,')
-    print()
-    print('Or loyal Hufflepuff,')
-    print('Where they are just and true!"')
-    print()
-    print("-" * 80)
-    print()
-    input("Press Enter to continue...")
-    print()
-
-    print("The Great Hall erupts in applause.")
     print()
     print("Professor McGonagall begins calling names alphabetically.")
     print()
@@ -361,7 +316,7 @@ def sorting_ceremony(character):
 
     print("-" * 80)
     print()
-    print("A small voice speaks in your ear: the Hat's voice:")
+    print("A small voice speaks in your ear; the Hat's voice:")
     print()
     print('"Hmm... interesting. Very interesting indeed."')
     print('"I can see your qualities clearly..."')
@@ -418,7 +373,6 @@ def sorting_ceremony(character):
     print("You pull off the Hat and walk toward your new house table.")
     print()
 
-    # House specific interaction
     if assigned_house == "Gryffindor":
         print("The Gryffindor table explodes with cheers!")
         print("Students in red and gold robes stand and applaud as you approach.")
@@ -473,14 +427,12 @@ def enter_common_room(character):
     input("Press Enter to continue...")
     print()
 
-    # KLoad data
     houses_data = load_file("data/houses.json")
     player_house = character["House"]
     house_info = houses_data[player_house]
 
     print(f"Finally, you arrive at the {player_house} common room entrance.")
 
-    # House-specific entrance descriptions
     if player_house == "Gryffindor":
         print("You stop in front of a large portrait of a fat lady in a pink silk dress.")
         print()
@@ -531,7 +483,6 @@ def enter_common_room(character):
     input("Press Enter to continue...")
     print()
 
-    # Apply bonus attributes
     print("As you settle into your new house, you feel your qualities strengthening...")
     print()
     for attribute, bonus in house_info['bonus_attributs'].items():
@@ -543,7 +494,7 @@ def enter_common_room(character):
     input("Press Enter to continue...")
     print()
 
-def start_chapter_2(char):
+def start_chapter_2(character):
     print("~"*80)
     print("=" * 80)
     print("                Chapter II: Friends, Foes, and the Sorting Hat")
@@ -551,15 +502,27 @@ def start_chapter_2(char):
     print("~"*80)
     print()
 
-    meet_friends(char)
+    print("Hagrid drops you off at King's Cross Station with a warm pat on the shoulder.")
+    print()
+    print('"Platform 9¾ is between platforms 9 and 10," he reminds you.')
+    print('"Just walk straight at the barrier. Don\'t stop, don\'t be scared.')
+    print('Best do it at a bit of a run if you are the nervous kind!", he laughs.')
+    print()
+    print("You take a deep breath, grip your trolley, and run straight at the solid barrier.")
+    print("You brace for impact, but instead...")
+    print()
+    input("Press Enter to continue...")
+    print()
+
+    meet_friends(character)
     welcome_message()
-    sorting_ceremony(char)
-    enter_common_room(char)
+    sorting_ceremony(character)
+    enter_common_room(character)
 
     print("=" * 80)
     print("                                 Your Profile")
     print("." * 80)
-    display_character(char)
+    display_character(character)
     print("=" * 80)
 
     print()
@@ -581,4 +544,4 @@ def start_chapter_2(char):
     input("Press Enter to continue...")
     print()
 
-    return(char)
+    return character

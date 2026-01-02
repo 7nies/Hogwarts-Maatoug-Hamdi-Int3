@@ -25,7 +25,7 @@ def ask_number(message, min_val=None, max_val=None):
     valid = False
     while not valid:
         user_input = input(message).strip()
-        if not user_input:      # vide ?
+        if not user_input:
             print("Invalid input. Please enter a number.")
         else:
             start_index = 0

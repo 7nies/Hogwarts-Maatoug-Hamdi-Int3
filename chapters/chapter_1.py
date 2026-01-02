@@ -1,5 +1,6 @@
-from universe.character import *
-from utils.input_utils import *
+from universe.character import init_character, display_character, modify_money, add_item
+from utils.input_utils import ask_text, ask_number, ask_choice, load_file
+
 
 def introduction():
     """
@@ -36,8 +37,6 @@ def introduction():
     input("Press Enter to continue...")
     return ''
 
-######################################################################################
-######################################################################################
 
 def create_character():
     """
@@ -52,31 +51,25 @@ def create_character():
     print()
 
     print("You crawl out of your cupboard and peer through the darkness.")
-    print()
     print("At the window sits a magnificent tawny owl, its amber eyes fixed on you.")
     print("In its beak is a thick envelope made of yellowish parchment.")
     print()
     print("The owl taps the window again, more insistently.")
-    print()
     print("You glance toward the stairs... Everyone's asleep. You carefully open the window.")
-    print()
     print("The owl swoops in silently and drops the letter into your hands.")
     print()
     input("Press Enter to continue...")
     print()
 
     print("You break the seal carefully. Inside, you find two items:")
-    print()
     print("A formal letter on thick parchment...")
     print("And a ticket made of golden cardstock with elegant lettering.")
     print()
     print("But something's odd... The name section on the ticket is blank.")
     print()
     print("As you touch the empty space, golden ink appears, forming words:")
-    print()
     print('"Write your full name upon this ticket.')
     print('Once written, your place at Hogwarts is secured."')
-    print()
     print("The blank spaces seem to shimmer, waiting...")
     print()
 
@@ -103,6 +96,7 @@ def create_character():
     input("Press Enter to continue...")
     print()
 
+    # ask attributes part
     print("Suddenly, something small and crystalline falls out of the envelope.")
     print()
     print("It's a perfectly smooth crystal, no bigger than a marble, that shifts through colors...")
@@ -176,16 +170,12 @@ def create_character():
     print()
     return character
 
-######################################################################################
-######################################################################################
 
 def receive_letter(character):
     """
     This function simulates the player's reading of the Hogwarts invitation letter, issuing in either a refusal or the acceptance.
     """
 
-    print("You can hear the blood rushing through your veins.")
-    print()
     print("Your eyes go back to the letter on the floor.")
     print("You unfold the letter with trembling hands:")
     print()
@@ -248,23 +238,22 @@ def receive_letter(character):
     input("Press Enter to continue...")
     print()
 
+
 def meet_hagrid():
     """
     Introduction to Hagrid and transition to shopping.
     """
     print("-" * 80)
-    print("                            The Keeper of Keys")
+    print("                             The Keeper of Keys")
     print("-" * 80)
     print()
 
     print("The pounding continues. You hear Uncle Vernon thundering down the stairs,")
     print('shouting about "the middle of the night" and "decent people."')
     print()
-    print("The door rattles on its hinges.")
-    print()
     print("*CRASH*")
     print()
-    print("The door flies open, while Vernon didn't even have the time to unlock it.")
+    print("The door flies open, Vernon wasn't even downstairs yet.")
     print()
     print("Standing in the doorway is the largest man you've ever seen.")
     print("He's almost twice as tall as a normal person and at least five times as wide.")
@@ -309,7 +298,7 @@ def meet_hagrid():
         print('"I like your spirit, but we\'ve got supplies to buy before September!"')
         print()
         print("He carries you over his shoulder and you both disappear into the night,")
-        print("under the eyes of your uncle - the only thing that still moves in him.")
+        print("under the eyes of your paralyzed uncle.")
     else:
         print('"Excellent!" Hagrid booms. "That\'s the spirit. Come on then!"')
         print("Hagrid leads you out into the night. The Dursleys don't even try to stop you.")
@@ -335,14 +324,12 @@ def buy_supplies(character):
     print("and taps a specific rhythm on a nearby brick wall:")
     print("Tap-tap. Tap. Tap-tap-tap.")
     print()
-    print("The bricks shifts, folding away to reveal a narrow")
-    print("cobblestone alley lit by flickering lanterns. Even at night, you can see")
-    print("some shops till open, their windows glowing with magical light,")
-    print("displaying everything from bubbling cauldrons")
-    print("to broomsticks that twitch as if eager to fly.")
+    print("The bricks shifts, folding away to reveal a narrow cobblestone alley")
+    print("lit by flickering lanterns. Even at night, you can see some shops till open,")
+    print("their windows glowing with magical light, displaying everything")
+    print("from bubbling cauldrons to broomsticks that twitch as if eager to fly.")
     print()
     print('"Welcome," Hagrid says proudly, "to Diagon Alley."')
-    print()
     print("Shop signs creak in the breeze.")
     print()
     input("Press Enter to continue...")
@@ -362,27 +349,14 @@ def buy_supplies(character):
     input("Press Enter to continue...")
     print()
 
-    print("A shop door opens, and a witch in midnight-blue robes steps out.")
-    print("She's holding what looks like a compass, except the needle is pointing at you.")
-    print()
-    print('"New student... Let me help you navigate the shops that are still open."')
-    print()
-    print("She waves her wand, and a shimmering golden map appears in the air,")
-    print("showing all the shops in Diagon Alley.")
-    print()
-    input("Press Enter to continue...")
-    print()
-
     print("-" * 80)
     print("                              Running errands...")
     print("-" * 80)
     print("Catalog of available items:")
 
-    # Load inv + req items
     inv = load_file("data/inventory.json")
     req_items = ["Magic Wand", "Wizard Robe", "Potions Book"]
 
-    # Print the shop UI
     print("." * 50)
     for key in inv:
         req = ""
@@ -394,27 +368,22 @@ def buy_supplies(character):
     print("." * 50)
     print()
 
-    # Remaining money
     print(f"You have {character['Money']} Galleons.")
     print(f"Remaining required items: {', '.join(req_items)}")
     print()
 
-    # Buy as long as there are still req items
     while len(req_items) > 0:
         choice = ask_number("Enter the number of the item to buy: ", 1, len(inv))
 
-        # Convert choice to string to match dictionary keys
         choice_key = str(choice)
 
-        # Get item details
         item_name = inv[choice_key][0]
         item_price = inv[choice_key][1]
 
-        # Check if already in char inv
         if item_name in character["Inventory"]:
             print(f"You already have {item_name}.")
             print()
-            continue  # Skip to next iteration
+            continue
 
         # Check if player can afford
         if character["Money"] < item_price:
@@ -426,17 +395,14 @@ def buy_supplies(character):
             print("Game over: Insufficient funds for required supplies.")
             exit(0)
 
-        # Purchase item
         modify_money(character, -item_price)
         add_item(character, "Inventory", item_name)
         print(f"You bought: {item_name} (-{item_price} Galleons).")
         print(f"You have {character['Money']} Galleons.")
 
-        # Remove from required list if it was required
         if item_name in req_items:
             req_items.remove(item_name)
 
-        # Display remaining required items
         if len(req_items) > 0:
             print(f"Remaining required items: {', '.join(req_items)}")
         else:
@@ -447,12 +413,11 @@ def buy_supplies(character):
     input("Press Enter to continue...")
     print()
 
-    # Transition
-    print('"Perfect!" the witch says. "Now, every Hogwarts student needs')
-    print('a loyal companion."')
+    print('"Perfect! Now, every Hogwarts student')
+    print('needs a loyal companion."')
     print()
-    print("She gestures toward a shop where soft hoots, meows, squeaks, and croaks")
-    print("can be heard.")
+    print("He gestures toward a shop where")
+    print("soft hoots, meows, squeaks, and croaks can be heard.")
     print()
     input("Press Enter to continue...")
     print()
@@ -462,7 +427,6 @@ def buy_supplies(character):
     print("-"*80)
     print()
 
-# Print pet store UI
     print("Available pets:")
     print("."*50)
     print("1. Owl - 20 Galleons (Delivers mail and very intelligent)")
@@ -512,21 +476,12 @@ def buy_supplies(character):
     print("All required items have been successfully purchased! Here is your")
     print("final inventory:")
     print()
-
-    print("=" * 80)
-    print("                                 Your Profile")
-    print("." * 80)
-    display_character(character)
-    print("=" * 80)
-    print()
-    input("Press Enter to continue...")
-    print()
     return character
 
 
 def start_chapter_1():
     """
-    This function regroups the entirety of the function that form chapter 1, as well as a small conclusion.
+    This function regroups the entirety of the functions that form chapter 1, as well as a small conclusion.
     :return:
     """
     print("~"*80)
@@ -537,16 +492,32 @@ def start_chapter_1():
     print()
 
     introduction()
-    char = create_character()
-    receive_letter(char)
+    character = create_character()
+    receive_letter(character)
     meet_hagrid()
-    buy_supplies(char)
+    buy_supplies(character)
 
     print("=" * 80)
-    print()
-
+    print("                                 Your Profile")
+    print("." * 80)
+    display_character(character)
+    print("=" * 80)
 
     print()
     input("Press Enter to continue...")
     print()
-    return char
+
+    print("End of Chapter I!")
+    print()
+    print("You step back into the cool night air, ")
+    print("your wand tucked into your robes, your new companion at your side.")
+    print("Diagon Alley glimmers behind you.")
+    print()
+    print("So much has happened in just one day.")
+    print("But don't fool yourself;")
+    print("your fall into the magical world has only just begun...")
+    print()
+    input("Press Enter to continue...")
+    print()
+
+    return character

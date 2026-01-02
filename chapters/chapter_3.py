@@ -1,6 +1,6 @@
-from universe.character import add_item
+from universe.character import add_item, display_character
 from universe.house import update_house_points, display_winning_house
-from utils.input_utils import load_file, ask_choice, ask_number, ask_text
+from utils.input_utils import load_file, ask_text
 import random
 
 def learn_spells(character, file_path):
@@ -49,13 +49,16 @@ def learn_spells(character, file_path):
 
     while len(learned_spells) < 5:
         spell = random.choice(spells_list)
-        if spell not in learned_spells:
-            if spell["type"] == "Offensive" and len(offensive) < 1:
-                offensive.append(spell)
-            elif spell["type"] == "Defensive" and len(defensive) < 1:
-                defensive.append(spell)
-            elif spell["type"] == "Utility" and len(utility) < 3:
-                utility.append(spell)
+        if spell in learned_spells:
+            continue
+        if spell["type"] == "Offensive" and len(offensive) < 1:
+            offensive.append(spell)
+        elif spell["type"] == "Defensive" and len(defensive) < 1:
+            defensive.append(spell)
+        elif spell["type"] == "Utility" and len(utility) < 3:
+            utility.append(spell)
+        else:
+            continue
         learned_spells.append(spell)
 
     print("Over the next few hours, you practice diligently...")
@@ -63,19 +66,14 @@ def learn_spells(character, file_path):
 
     for spell in learned_spells:
         add_item(character, "Spells", spell["name"])
-
         if spell["type"] == "Offensive":
-            print(f"⚔  Professor Flitwick teaches you: {spell['name']}")
-            print(f'   "{spell["description"]}"')
-
+            symbol = "⚔"
         elif spell["type"] == "Defensive":
-            print(f"🛡  Professor Flitwick teaches you: {spell['name']}")
-            print(f'   "{spell["description"]}"')
-
+            symbol = "🛡"
         else:
-            print(f"✴  Professor Flitwick teaches you: {spell['name']}")
-            print(f'   "{spell["description"]}"')
-
+            symbol = "✴"
+        print(f"{symbol}  Professor Flitwick teaches you: {spell['name']}")
+        print(f'   "{spell["description"]}"')
         print()
         input("Press Enter to continue...")
         print()
@@ -251,6 +249,13 @@ def start_chapter_3(character, houses):
     print()
 
     print("=" * 80)
+    print("                                 Your Profile")
+    print("." * 80)
+    display_character(character)
+    print("=" * 80)
+
+    print()
+    input("Press Enter to continue...")
     print()
 
     print("End of Chapter III!")
@@ -262,7 +267,7 @@ def start_chapter_3(character, houses):
     print()
     input("Press Enter to continue...")
     print()
-
+    return character, houses
 
 
 

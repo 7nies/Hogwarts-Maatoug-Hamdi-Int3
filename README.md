@@ -18,8 +18,8 @@ Ines Maatoug & Anas Hamdi, Int-3
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/[your-username]/hogwarts-[student1name]-[student2name]-[groupname].git
-cd hogwarts-[student1name]-[student2name]-[groupname]
+git clone https://github.com/7nies/Hogwarts-Maatoug-Hamdi-Int3.git
+cd Hogwarts-Maatoug-Hamdi-Int3
 ```
 
 ## ╰୧ Usage
@@ -190,7 +190,8 @@ You have 65 Galleons.
 
 ### ⟣．． Task Distribution
 
-Ines Maatoug (7nies): Mainly wrote the narrative text and did the ascii art. Helped with the functions
+Ines Maatoug (7nies): Mainly wrote the narrative text and did the ascii art. Helped with the functions.
+
 Anas Hamdi: Coded the functions.
 
 

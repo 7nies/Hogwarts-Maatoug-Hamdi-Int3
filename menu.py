@@ -19,7 +19,7 @@ def launch_menu_choice():
     Controls the main menu loop and orchestrates the game's progression.
     :return:
     """
-    hogwarts_ascii = """
+    hogwarts_ascii = """"
                                       #.                                                                 
                                     .# #.                                                                
                                    ##   #                     #        #+   ##                           
